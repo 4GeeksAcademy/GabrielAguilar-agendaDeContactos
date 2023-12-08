@@ -1,11 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./component/scrollToTop";
 
+import { Home } from "./views/home";
+import { Form } from "./views/form";
+import { Single } from "./views/single";
+import { EditForm } from "./views/editForm"
 import injectContext from "./store/appContext";
 
-import { Contact } from "./views/contact";
-import { AddContact } from "./views/addContact";
-
+import { Navbar } from "./component/navbar";
 
 
 //create your first component
@@ -15,14 +18,18 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="wrapper mx-auto">
+		<div>
 			<BrowserRouter basename={basename}>
-				<Routes>
-					<Route exact path="/" element={<Contact />} />
-					<Route exact path="/addcontact" element={<AddContact />} />
-					<Route path="/edit/:index" element={<AddContact />} />
-					<Route path="*" element={<h1>Not found!</h1>} />
-				</Routes>
+				<ScrollToTop>
+					<Navbar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/form" element={<Form />} />
+						<Route path="/editForm/:theid" element={<EditForm />} />
+						<Route path="/single/:theid" element={<Single />} />
+						<Route path="*" element={<h1>Nada por aqui, te me perdiste!</h1>} />
+					</Routes>
+				</ScrollToTop>
 			</BrowserRouter>
 		</div>
 	);

@@ -1,0 +1,16 @@
+.avatar{
+    border-radius: 100%;
+    width: 65%;
+}
+.editButton{
+    margin-right: -15px;
+}
+.sideButtons{
+    border: none;
+    background-color: white;
+}
+
+.contactName{
+    font-size: 27px;
+    color: rgb(65, 65, 65);
+}

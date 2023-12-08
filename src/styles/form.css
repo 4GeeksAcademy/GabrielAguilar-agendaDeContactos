@@ -1,0 +1,12 @@
+.inputs{
+    width: 90%;
+}
+
+.saveButton{
+    border: none;
+    background: #c4c1c1;
+}
+
+.saveButton:hover{
+    box-shadow:0px 6px 10px grey;
+}
